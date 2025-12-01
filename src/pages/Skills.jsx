@@ -1,55 +1,43 @@
 import React from 'react';
-import { FaPython, FaHtml5, FaJs, FaDatabase, FaTools, FaBrain } from 'react-icons/fa';
-import { SiPandas, SiNumpy, SiScikitlearn, SiMicrosoftexcel, SiJira } from 'react-icons/si';
+import { FaReact, FaPython, FaNodeJs, FaGitAlt, FaDocker } from 'react-icons/fa';
+import { SiMongodb, SiPostgresql, SiMysql, SiJavascript, SiTailwindcss, SiFlask } from 'react-icons/si';
 
 const Skills = () => {
-  const skillCategories = [
+  const skills = [
     {
-      title: 'Programming',
-      icon: <FaPython />,
-      color: 'bg-blue-500',
-      skills: [
-        { name: 'Python', level: 85 },
-        { name: 'SQL', level: 80 },
-        { name: 'HTML', level: 90 },
-        { name: 'JavaScript', level: 75 },
+      category: 'Programming Languages',
+      items: [
+        { name: 'Python', icon: <FaPython />, color: 'text-blue-500' },
+        { name: 'JavaScript', icon: <SiJavascript />, color: 'text-yellow-400' },
       ],
     },
     {
-      title: 'Data & Machine Learning',
-      icon: <FaBrain />,
-      color: 'bg-purple-500',
-      skills: [
-        { name: 'Pandas', level: 85 },
-        { name: 'NumPy', level: 80 },
-        { name: 'Scikit-learn', level: 75 },
-        { name: 'Data Analysis (EDA)', level: 85 },
-        { name: 'Data Preprocessing', level: 80 },
-        { name: 'Classification Models', level: 75 },
+      category: 'Frontend Development',
+      items: [
+        { name: 'React', icon: <FaReact />, color: 'text-cyan-400' },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss />, color: 'text-teal-400' },
       ],
     },
     {
-      title: 'Tools & Platforms',
-      icon: <FaTools />,
-      color: 'bg-green-500',
-      skills: [
-        { name: 'MS Excel (Advanced)', level: 90 },
-        { name: 'JIRA', level: 70 },
-        { name: 'ServiceNow', level: 65 },
-        { name: 'MS Teams', level: 85 },
-        { name: 'Outlook', level: 85 },
+      category: 'Backend Development',
+      items: [
+        { name: 'Node.js', icon: <FaNodeJs />, color: 'text-green-500' },
+        { name: 'Flask', icon: <SiFlask />, color: 'text-gray-700' },
       ],
     },
     {
-      title: 'Other Skills',
-      icon: <FaDatabase />,
-      color: 'bg-orange-500',
-      skills: [
-        { name: 'Problem Solving', level: 90 },
-        { name: 'Customer Support', level: 85 },
-        { name: 'Team Collaboration', level: 90 },
-        { name: 'UI/UX Basics', level: 70 },
-        { name: 'Analytical Thinking', level: 85 },
+      category: 'Databases',
+      items: [
+        { name: 'MongoDB', icon: <SiMongodb />, color: 'text-green-600' },
+        { name: 'PostgreSQL', icon: <SiPostgresql />, color: 'text-blue-600' },
+        { name: 'MySQL', icon: <SiMysql />, color: 'text-blue-700' },
+      ],
+    },
+    {
+      category: 'Tools & Technologies',
+      items: [
+        { name: 'Git', icon: <FaGitAlt />, color: 'text-orange-600' },
+        { name: 'Docker', icon: <FaDocker />, color: 'text-blue-500' },
       ],
     },
   ];
@@ -60,58 +48,38 @@ const Skills = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-poppins text-secondary mb-4">
-            Skills & Expertise
+            Skills & Technologies
           </h1>
           <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and proficiency levels
+            Here are the technologies and tools I work with
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <div
-              key={index}
-              className="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300"
-            >
-              {/* Category Header */}
-              <div className="flex items-center mb-6">
-                <div className={`${category.color} text-white text-3xl p-3 rounded-lg mr-4`}>
-                  {category.icon}
-                </div>
-                <h2 className="text-2xl font-bold font-poppins text-secondary">
-                  {category.title}
-                </h2>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-4">
-                {category.skills.map((skill, idx) => (
-                  <div key={idx}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-primary font-semibold">{skill.level}%</span>
+        <div className="max-w-6xl mx-auto space-y-12">
+          {skills.map((skillCategory, categoryIndex) => (
+            <div key={categoryIndex} className="bg-white p-8 rounded-xl shadow-lg">
+              <h2 className="text-2xl font-bold font-poppins text-secondary mb-6">
+                {skillCategory.category}
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {skillCategory.items.map((skill, skillIndex) => (
+                  <div
+                    key={skillIndex}
+                    className="flex flex-col items-center p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300 hover:shadow-md group"
+                  >
+                    <div className={`text-5xl mb-4 ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
+                      {skill.icon}
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                      <div
-                        className="bg-primary h-full rounded-full transition-all duration-1000 ease-out"
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
+                    <span className="text-gray-700 font-medium text-center">
+                      {skill.name}
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Additional Info */}
-        <div className="mt-12 bg-gradient-to-r from-primary to-accent text-white p-8 rounded-xl text-center">
-          <h3 className="text-2xl font-bold font-poppins mb-3">Always Learning</h3>
-          <p className="text-lg">
-            Continuously exploring new technologies and improving my skill set to stay ahead in the tech industry.
-          </p>
         </div>
       </div>
     </div>
