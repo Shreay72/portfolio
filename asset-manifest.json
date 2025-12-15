@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.3e6546e8.css",
-    "main.js": "/portfolio/static/js/main.d3d6a7bd.js",
+    "main.js": "/portfolio/static/js/main.834f45b9.js",
     "static/media/bank_fraud.png": "/portfolio/static/media/bank_fraud.8b5b3de382aea501f175.png",
     "static/media/finance_manager.png": "/portfolio/static/media/finance_manager.77fae078acdd5318b18b.png",
     "static/media/jewellery.png": "/portfolio/static/media/jewellery.dcd1a2eb841f9ca6d203.png",
     "static/media/ai_agent.png": "/portfolio/static/media/ai_agent.3f1ff2e0f901f9df53e0.png",
     "index.html": "/portfolio/index.html",
     "main.3e6546e8.css.map": "/portfolio/static/css/main.3e6546e8.css.map",
-    "main.d3d6a7bd.js.map": "/portfolio/static/js/main.d3d6a7bd.js.map"
+    "main.834f45b9.js.map": "/portfolio/static/js/main.834f45b9.js.map"
   },
   "entrypoints": [
     "static/css/main.3e6546e8.css",
-    "static/js/main.d3d6a7bd.js"
+    "static/js/main.834f45b9.js"
   ]
 }
