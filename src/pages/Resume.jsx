@@ -3,15 +3,15 @@ import { FaDownload, FaEye } from 'react-icons/fa';
 
 const Resume = () => {
   return (
-    <div className="min-h-screen py-20 bg-gray-50">
+    <div className="min-h-screen py-20 bg-background text-textPrimary">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-poppins text-secondary mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold font-poppins text-primary mb-4">
             My Resume
           </h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-4"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-accent mx-auto mb-4 rounded-full"></div>
+          <p className="text-lg text-textSecondary max-w-2xl mx-auto">
             View or download my complete professional resume
           </p>
         </div>
@@ -21,7 +21,7 @@ const Resume = () => {
           <a
             href="/resume.pdf"
             download
-            className="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2 shadow-lg"
+            className="bg-primary text-secondary px-8 py-3 rounded-lg font-bold hover:bg-sky-400 transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/50"
           >
             <FaDownload /> Download Resume
           </a>
@@ -29,14 +29,14 @@ const Resume = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300 flex items-center gap-2 shadow-lg"
+            className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-primary hover:text-secondary transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/30"
           >
             <FaEye /> View in New Tab
           </a>
         </div>
 
         {/* PDF Viewer */}
-        <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden border-4 border-secondary">
           <iframe
             src="/resume.pdf"
             title="Resume"
@@ -47,7 +47,7 @@ const Resume = () => {
 
         {/* Alternative - If PDF doesn't load */}
         <div className="text-center mt-8">
-          <p className="text-gray-600 mb-2">Having trouble viewing the resume?</p>
+          <p className="text-textSecondary mb-2">Having trouble viewing the resume?</p>
           <a
             href="/resume.pdf"
             download

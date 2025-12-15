@@ -22,12 +22,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <nav className="fixed w-full top-0 z-50 glass shadow-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="text-2xl font-bold font-poppins text-primary">
-            Shreay<span className="text-secondary">.</span>
+            Shreay<span className="text-accent">.</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -36,11 +36,10 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`font-medium transition-colors duration-300 ${
-                  location.pathname === item.path
+                className={`font-medium transition-colors duration-300 ${location.pathname === item.path
                     ? 'text-primary border-b-2 border-primary'
-                    : 'text-gray-700 hover:text-primary'
-                }`}
+                    : 'text-textSecondary hover:text-primary'
+                  }`}
               >
                 {item.name}
               </Link>
@@ -49,7 +48,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button onClick={toggleMenu} className="text-2xl text-primary">
+            <button onClick={toggleMenu} className="text-2xl text-primary focus:outline-none">
               {isOpen ? <FaTimes /> : <FaBars />}
             </button>
           </div>
@@ -57,17 +56,16 @@ const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4">
+          <div className="md:hidden mt-4 pb-4 animate-fade-in">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
                 onClick={toggleMenu}
-                className={`block py-2 font-medium ${
-                  location.pathname === item.path
+                className={`block py-2 font-medium ${location.pathname === item.path
                     ? 'text-primary'
-                    : 'text-gray-700'
-                }`}
+                    : 'text-textSecondary hover:text-white'
+                  }`}
               >
                 {item.name}
               </Link>

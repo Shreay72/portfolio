@@ -1,93 +1,113 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 import { FaLinkedin, FaGithub, FaEnvelope, FaDownload } from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <div className="min-h-screen flex items-center bg-gradient-to-br from-blue-50 to-gray-100">
-      <div className="container mx-auto px-4 py-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Side - Text Content */}
-          <div className="space-y-6">
-            <h2 className="text-lg md:text-xl text-primary font-medium">
-              Hi, I'm 👋
-            </h2>
-            <h1 className="text-4xl md:text-6xl font-bold font-poppins text-secondary leading-tight">
-              Shreay Patil
-            </h1>
-            <h3 className="text-xl md:text-2xl text-gray-600 font-medium">
-              Data Analyst | Web Developer | IT Support Enthusiast
-            </h3>
-            <p className="text-gray-700 text-lg leading-relaxed">
-              I transform raw data into meaningful insights and build clean, user-friendly 
-              digital experiences. With strong analytical skills and hands-on experience in 
-              Python, Machine Learning, and Excel dashboards, I enjoy solving real-world 
-              problems using technology.
-            </p>
+    <div className="min-h-screen flex items-center justify-center bg-background px-4 pt-20">
+      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* Left Side - Text Content */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="space-y-6 text-center md:text-left"
+        >
+          <h2 className="text-xl md:text-2xl text-primary font-medium tracking-wide">
+            Hello, I am
+          </h2>
+          <h1 className="text-5xl md:text-7xl font-bold font-poppins text-textPrimary leading-tight">
+            Shreay Patil
+          </h1>
+          <h2 className="text-2xl md:text-4xl text-textSecondary font-semibold h-20 md:h-auto">
+            I am a{' '}
+            <span className="text-accent">
+              <Typewriter
+                words={['Data Science Enthusiast', 'Python Developer', 'ML Engineer']}
+                loop={0}
+                cursor
+                cursorStyle="_"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
+          </h2>
+          <p className="text-lg md:text-xl text-textSecondary leading-relaxed">
+            Data Science Enthusiast and Intermediate Python Developer with hands-on experience transforming raw data into meaningful insights.
+            I build machine learning models, automate dashboards, and deliver data-driven outcomes that improve decision-making efficiency.
+          </p>
 
-            {/* Buttons */}
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a
-                href="/resume.pdf"
-                download
-                className="bg-primary text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300 flex items-center gap-2"
-              >
-                <FaDownload /> Download Resume
-              </a>
-              <Link
-                to="/contact"
-                className="border-2 border-primary text-primary px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-300"
-              >
-                Contact Me
-              </Link>
-            </div>
-
-            {/* Social Icons */}
-            <div className="flex space-x-6 pt-4">
-              <a
-                href="https://www.linkedin.com/in/shreay-patil"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors duration-300"
-                aria-label="LinkedIn"
-              >
-                <FaLinkedin className="text-3xl" />
-              </a>
-              <a
-                href="https://github.com/shreay"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-primary transition-colors duration-300"
-                aria-label="GitHub"
-              >
-                <FaGithub className="text-3xl" />
-              </a>
-              <a
-                href="mailto:shreay122@gmail.com"
-                className="text-gray-600 hover:text-primary transition-colors duration-300"
-                aria-label="Email"
-              >
-                <FaEnvelope className="text-3xl" />
-              </a>
-            </div>
+          {/* Buttons */}
+          <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/resume.pdf"
+              download
+              className="bg-primary text-secondary px-8 py-3 rounded-full font-bold hover:bg-sky-400 transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/50"
+            >
+              <FaDownload /> Download Resume
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="/contact"
+              className="border-2 border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary hover:text-secondary transition-colors duration-300 shadow-lg hover:shadow-primary/30"
+            >
+              Contact Me
+            </motion.a>
           </div>
 
-          {/* Right Side - Profile Image */}
-          <div className="flex justify-center">
-            <div className="relative">
-              <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-                <img
-                  src="/profile.jpg"
-                  alt="Shreay Patil"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Decorative Elements */}
-              <div className="absolute -z-10 top-10 right-10 w-72 h-72 bg-accent rounded-full opacity-20"></div>
-              <div className="absolute -z-10 bottom-10 left-10 w-60 h-60 bg-primary rounded-full opacity-20"></div>
+          {/* Social Icons */}
+          <div className="flex space-x-6 justify-center md:justify-start pt-6">
+            <a
+              href="https://www.linkedin.com/in/shreay-patil-18317b2a3"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-textSecondary hover:text-primary transition-colors duration-300 text-3xl hover:scale-110 transform"
+            >
+              <FaLinkedin />
+            </a>
+            <a
+              href="https://github.com/Shreay72"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-textSecondary hover:text-primary transition-colors duration-300 text-3xl hover:scale-110 transform"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="mailto:shreay122@gmail.com"
+              className="text-textSecondary hover:text-primary transition-colors duration-300 text-3xl hover:scale-110 transform"
+            >
+              <FaEnvelope />
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Right Side - Profile Image with Glow */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center relative"
+        >
+          <div className="relative w-80 h-80 md:w-[450px] md:h-[450px]">
+            {/* Glowing Rings */}
+            <div className="absolute inset-0 rounded-full border-4 border-primary/20 animate-pulse"></div>
+            <div className="absolute -inset-4 rounded-full border-2 border-accent/20 animate-spin-slow"></div>
+
+            <div className="w-full h-full rounded-full overflow-hidden border-4 border-secondary shadow-2xl shadow-primary/20 z-10 relative">
+              <img
+                src="/profile.jpg"
+                alt="Shreay Patil"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

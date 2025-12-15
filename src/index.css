@@ -12,6 +12,8 @@ body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0F172A; /* Slate 900 */
+  color: #F8FAFC; /* Slate 50 */
 }
 
 html {
@@ -28,14 +30,21 @@ code {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1E293B; /* Slate 800 */
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2563EB;
+  background: #38BDF8; /* Sky Blue */
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
+  background: #0EA5E9; /* Darker Sky Blue */
+}
+
+.glass {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
