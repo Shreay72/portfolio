@@ -79,7 +79,7 @@ const Home = () => {
               <FaGithub />
             </a>
             <a
-              href="mailto:shreay122@gmail.com"
+              href="mailto:shreay72@gmail.com"
               className="text-textSecondary hover:text-primary transition-colors duration-300 text-3xl hover:scale-110 transform"
             >
               <FaEnvelope />

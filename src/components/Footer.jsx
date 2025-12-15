@@ -23,7 +23,7 @@ const Footer = () => {
             <FaGithub className="text-2xl" />
           </a>
           <a
-            href="mailto:shreay122@gmail.com"
+            href="mailto:shreay72@gmail.com"
             className="hover:text-primary transition-colors duration-300"
           >
             <FaEnvelope className="text-2xl" />
