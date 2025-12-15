@@ -18,7 +18,7 @@ const About = () => {
           <div className="flex justify-center">
             <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-secondary shadow-xl shadow-primary/20">
               <img
-                src="/profile.jpg"
+                src={`${process.env.PUBLIC_URL}/profile.jpg`}
                 alt="Shreay Patil"
                 className="w-full h-full object-cover"
               />

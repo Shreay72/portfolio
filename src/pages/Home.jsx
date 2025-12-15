@@ -44,7 +44,7 @@ const Home = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
+              href={`${process.env.PUBLIC_URL}/resume.pdf`}
               download
               className="bg-primary text-secondary px-8 py-3 rounded-full font-bold hover:bg-sky-400 transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/50"
             >
@@ -101,7 +101,7 @@ const Home = () => {
 
             <div className="w-full h-full rounded-full overflow-hidden border-4 border-secondary shadow-2xl shadow-primary/20 z-10 relative">
               <img
-                src="/profile.jpg"
+                src={`${process.env.PUBLIC_URL}/profile.jpg`}
                 alt="Shreay Patil"
                 className="w-full h-full object-cover"
               />

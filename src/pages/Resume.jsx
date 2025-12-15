@@ -19,14 +19,14 @@ const Resume = () => {
         {/* Buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <a
-            href="/resume.pdf"
+            href={`${process.env.PUBLIC_URL}/resume.pdf`}
             download
             className="bg-primary text-secondary px-8 py-3 rounded-lg font-bold hover:bg-sky-400 transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/50"
           >
             <FaDownload /> Download Resume
           </a>
           <a
-            href="/resume.pdf"
+            href={`${process.env.PUBLIC_URL}/resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-bold hover:bg-primary hover:text-secondary transition-colors duration-300 flex items-center gap-2 shadow-lg hover:shadow-primary/30"
@@ -38,7 +38,7 @@ const Resume = () => {
         {/* PDF Viewer */}
         <div className="max-w-5xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden border-4 border-secondary">
           <iframe
-            src="/resume.pdf"
+            src={`${process.env.PUBLIC_URL}/resume.pdf`}
             title="Resume"
             className="w-full h-screen"
             style={{ minHeight: '800px' }}
@@ -49,7 +49,7 @@ const Resume = () => {
         <div className="text-center mt-8">
           <p className="text-textSecondary mb-2">Having trouble viewing the resume?</p>
           <a
-            href="/resume.pdf"
+            href={`${process.env.PUBLIC_URL}/resume.pdf`}
             download
             className="text-primary hover:underline font-medium"
           >
